@@ -1,23 +1,8 @@
 <?php
 
-$password = $_GET['passwordLen'];
+include __DIR__ . '/function.php';
 
-
-function getRandomPassword($password) {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $randomPassword = '';
- 
-    for ($i = 0; $i < $password; $i++) {
-        $index = rand(0, strlen($characters) - 1);
-        $randomPassword .= $characters[$index];
-    }
- 
-    return $randomPassword;
- }
- 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,11 +23,6 @@ function getRandomPassword($password) {
             <p> La tua password è: </p>
             <p class='password-color'> <?php echo getRandomPassword($password) ?> </p>
         </div>
-        
     </div>
-    
-
-    
-    
 </body>
 </html>
